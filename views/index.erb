@@ -1,0 +1,91 @@
+<div class="container">
+	<h1 class="text-center buffer2">Toubabs do Wolof</h1>
+</div>
+
+<div class="container">
+	<div class="row text-center buffer3">
+		<div class="col-sm-12">
+			<div class="row text-center">
+				<div class="col-xs-3">
+					<h3>
+						Wolof
+					</h3>
+				</div>
+				<div class="col-xs-3">
+					<h3>
+						English
+					</h3>
+				</div>
+				<div class="col-xs-3">
+					<h3>
+						Type
+					</h3>
+				</div>
+				<div class="col-xs-1 col-xs-offset-2">
+				</div>
+			</div>
+		</div>
+	</div>
+	<% @vocab.order(:wolof).each do |item| %>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="row align-left">
+				<div class="col-xs-3">
+					<ul>
+						<li><%= item.wolof %></li>
+					</ul>
+				</div>
+				<div class="col-xs-3">
+					<ul>
+						<li><%= item.english %></li>
+					</ul>
+				</div>
+				<div class="col-xs-3">
+					<ul>
+						<li><%= item.kind %></li>
+					</ul>
+				</div>
+				<div class="col-xs-1 col-xs-offset-2">
+					<form action='/delete/<%= item.id%>' method='POST'>
+						<input type='submit' value='X'>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<% end %>
+
+
+<div class="container">
+	<div class="row">
+		<h3>Enter new word or phrase</h3>
+	</div>
+	<div class="row buffer">
+		<form action='/' method='POST'>
+			<div class="col-xs-4">
+				<input type='text' name='wolof' placeholder='Wolof'>
+			</div>
+			<div class="col-xs-4">
+				<input type='text' name='english' placeholder='English'>
+			</div>
+			<div class="col-xs-4">
+				<select class="form-control" type='text' name='kind'>
+					<option>Expression</option>
+					<option>Verb</option>
+					<option>Noun</option>
+					<option>Adjective</option>
+					<option>Number</option>
+					<option>Slang</option>
+					<option>Other</option>
+				</select>
+			</div>
+		<div class="row text-center">
+			<div class="col-xs-12 buffer">
+				<input type='submit' value='Save'>
+			</div>
+		</form>
+		</div>
+	</div>
+</div>

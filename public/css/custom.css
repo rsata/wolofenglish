@@ -1,0 +1,32 @@
+.align-left {
+  text-align: left;
+}
+
+
+
+
+
+
+.buffer {
+  margin-top: 10px;
+}
+
+.buffer2 {
+  margin-top: 30px;
+}
+
+.buffer3 {
+  margin-top: 50px;
+}
+
+.mbuffer {
+  margin-top: -10px;
+}
+
+.mbuffer2 {
+  margin-top: -30px;
+}
+
+.mbuffer3 {
+  margin-top: -50px;
+}
