@@ -33,36 +33,3 @@ post '/delete/:id' do
     VocabListItem.find(params[:id]).destroy
     redirect '/'
 end
-
-
-# # define a route for the root of the site
-# get '/' do
-#   # render the views/index.erb template
-#   file_contents = File.read("to-do-items.txt")
-# 	@list = file_contents.split("\n")
-# 	erb :index
-# end
-
-
-# post '/' do
-#   File.open("to-do-items.txt", "a") do |file|
-#     file.puts "#{params[:task]} - #{params[:date]} \n"
-#   end
-#   redirect "/"
-# end
-
-
-# get '/' do
-
-#   item = TodoItem.find!
-#   @list = item
-#   erb :index
-
-# end
-
-
-# post '/' do
-
-#   TodoItem.create(description:{params[:task]} due:{params[:date]})
-
-# end
