@@ -11,33 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150115231017) do
-
-  create_table "counter", force: true do |t|
-    t.string "counter"
-  end
-
-  create_table "dictionary", force: true do |t|
-    t.string "wolof"
-    t.string "english"
-    t.string "type"
-  end
-
-  create_table "todo_items", force: true do |t|
-    t.string "description"
-    t.string "due"
-  end
+ActiveRecord::Schema.define(version: 20150203155223) do
 
   create_table "vocab_items", force: true do |t|
     t.string "wolof"
     t.string "english"
-    t.string "type"
-  end
-
-  create_table "vocab_list_items", force: true do |t|
-    t.string "wolof"
-    t.string "english"
-    t.string "kind"
   end
 
 end
