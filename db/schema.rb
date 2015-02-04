@@ -11,11 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150203155223) do
+ActiveRecord::Schema.define(version: 20150204150926) do
 
   create_table "vocab_items", force: true do |t|
     t.string "wolof"
     t.string "english"
+    t.string "sound"
   end
 
 end

@@ -2,36 +2,28 @@
 	<h1 class="text-center buffer2">Toubabs do Wolof</h1>
 </div>
 
-<div class="container">
-	<div class="row text-center buffer">
-		<div class="col-xs-3 col-xs-offset-3">
-			<h3>
-				Wolof
-			</h3>
-		</div>
-		<div class="col-xs-3">
-			<h3>
-				English
-			</h3>
-		</div>
-	</div>
-</div>
-<div class="container">
+<div class="container buffer3">
 	<div class="row">
-		<div class="col-xs-3 col-xs-offset-3">
-			<ul>
+		<div class="col-md-12">
+			<table class="table table-striped">
+				<tr>
+					<th>Wolof</th>
+					<th>Phonetic</th>
+					<th>English</th>
+					<th>Delete</th>
+				</tr>
 				<% @vocab.order(:wolof).each do |item| %>
-				<li><%= item.wolof %></li>
+				<tr>
+					<td><%= item.wolof %></td>
+					<td><%= item.sound %></td>
+					<td><%= item.english %></td>
+					<td><form action='/delete/<%= item.id%>' method='POST'>
+					<input type='submit' value='X'>
+					</form></td>
+				</tr>
 				<% end %>
-			</ul>
+			</table>
 		</div>
-		<div class="col-xs-3">
-			<ul>
-				<% @vocab.order(:wolof).each do |item| %>
-				<li><%= item.english %></li>
-				<% end %>
-			</ul>
-		</div>	
 	</div>
 </div>
 
@@ -42,11 +34,15 @@
 		</div>
 	</div>
 	<div class="row text-center buffer">
+		
 		<form action='/' method='POST'>
-			<div class="col-xs-3 col-xs-offset-3">
+			<div class="col-xs-4">
 				<input type='text' name='wolof' placeholder='Wolof'>
 			</div>
-			<div class="col-xs-3">
+			<div class="col-xs-4">
+				<input type='text' name='sound' placeholder='Sound'>
+			</div>		
+			<div class="col-xs-4">
 				<input type='text' name='english' placeholder='English'>
 			</div>
 			<div class="row text-center">
@@ -55,5 +51,6 @@
 				</div>
 			</div>
 		</form>
+	
 	</div>
 </div>

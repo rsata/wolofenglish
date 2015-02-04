@@ -25,10 +25,19 @@ get '/' do
   erb :index
 end
 
-#to create items
+#create items
 post '/' do
-  item = VocabItem.create(wolof:params[:wolof], english:params[:english])
+  item = VocabItem.create(wolof:params[:wolof], sound:params[:sound], english:params[:english])
   redirect "/"
 end
 
+#delete items
+post '/delete/:id' do
+  VocabItem.find(params[:id]).destroy
+  redirect '/'
+end
 
+post '/edit/:id' do
+  VocabItem.update(params[:id])
+  redirect '/'
+end
